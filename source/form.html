@@ -8,7 +8,7 @@
 
 <body class="page__body">
   <header class="page-header">
-    <a class="page-header__logo">
+    <a class="page-header__logo" href="index.html">
       <img src="img/header-logo.svg" width="196" height="38" alt="Интернет магазин «Cat Energy»">
     </a>
 
@@ -19,40 +19,155 @@
 
       <ul class="page-nav__list page-list">
         <li class="page-list__item page-list__item--current">
-          <a class="page-list__link">Главная</a>
+          <a class="page-list__link" href="index.html">Главная</a>
         </li>
         <li class="page-list__item">
           <a class="page-list__link" href="catalog.html">Каталог продукции</a>
         </li>
         <li class="page-list__item">
-          <a class="page-list__link" href="form.html">Подбор программы</a>
+          <a class="page-list__link">Подбор программы</a>
         </li>
       </ul>
     </nav>
   </header>
 
-  <main class="page-content">
-    <h1 class="visually-hidden">Интернет магазин «Cat Energy»</h1>
+  <main class="page-content program-selection">
+    <h1 class="program-selection__title">Подбор программы</h1>
+    <p class="program-selection__subtitle">Заполните анкету, и мы подберем программу питания для вашего кота</p>
 
-    <section class="promo">
-      <h2 class="promo__title">Функциональное питание для котов</h2>
+    <form class="program-selection__form selection-form">
+      <p class="selection-form__element">
+        <label class="selection-form__label" for="name">Имя&colon;&ast;</label>
+        <input class="selection-form__field" id="name" name="name" type="text" placeholder="Барсик" required>
+      </p>
+      <p class="selection-form__element">
+        <label class="selection-form__label" for="weight">Вес (кг)&colon;&ast;</label>
+        <input class="selection-form__field" id="weight" name="weight" type="number" placeholder="7" required>
+      </p>
+      <p class="selection-form__element">
+        <label class="selection-form__label" for="age">Возраст (лет)&colon;</label>
+        <input class="selection-form__field" id="age" name="age" type="number" placeholder="7">
+      </p>
+      <p class="selection-form__element">
+        <label class="selection-form__label">
+          <input class="visually-hidden" name="expectation" type="radio" value="weight_loss" checked>
+          <span class="selection-form__radio"></span>
+          Похудение
+        </label>
+      </p>
+      <p class="selection-form__element">
+        <label class="selection-form__label">
+          <input class="visually-hidden" name="expectation" type="radio" value="mass_gain">
+          <span class="selection-form__radio"></span>
+          Набор массы
+        </label>
+      </p>
+      <p class="selection-form__element">
+        <label class="selection-form__label">
+          <input class="visually-hidden" name="expectation" type="radio" value="dont_know">
+          <span class="selection-form__radio"></span>
+          Не знаю (нужен ваш совет)
+        </label>
+      </p>
 
-      <p class="promo__slogan">Занялся собой? Займись котом!</p>
-      <img class="promo__img" width="280" height="270" src="img/promo-img.png" alt="Cat Energy">
-      <a class="promo__btn btn" href="form.html">Подобрать программу</a>
-    </section>
+      <fieldset class="selection-form__fieldset">
+        <legend class="selection-form__legend">Контактные данные (владельца кота)</legend>
 
-    <section class="advantages">
-      <h2 class="visually-hidden">Преимущества</h2>
+        <p class="selection-form__element selection-form__element--email">
+          <label class="selection-form__label" for="email">E-mail&colon;&ast;</label>
+          <input class="selection-form__field" id="email" name="email" type="email" placeholder="kuklachev@gmail.com"
+            required>
+        </p>
+        <p class="selection-form__element selection-form__element--phone">
+          <label class="selection-form__label" for="phone">Телефон&colon;&ast;</label>
+          <input class="selection-form__field" id="phone" name="phone" type="tel" placeholder="8 (960) 900-60-90"
+            required>
+        </p>
+      </fieldset>
 
-      <article class="advantages__item advantage">
-        <h3 class="advantage__title">Похудение</h3>
+      <fieldset class="selection-form__fieldset">
+        <legend class="selection-form__legend">Комментарий</legend>
 
-        <p class="advantage__description">Ваш кот весит больше собаки и почти утратил способность лазить по деревьям?
-          Пора на диету! Cat Energy Slim поможет вашему питомцу сбросить лишний вес.</p>
-      </article>
-    </section>
+        <textarea class="selection-form__field selection-form__field--text" name="message" cols="30" rows="10"
+          placeholder="Расскажите обо всех повадках кота"></textarea>
+      </fieldset>
+
+      <fieldset class="selection-form__fieldset">
+        <legend class="selection-form__legend">Дополнительно</legend>
+
+        <p class="selection-form__element">
+          <label class="selection-form__label">
+            <input class="visually-hidden" name="sweetener" type="checkbox" checked>
+            <span class="selection-form__checkbox"></span>
+            Сахарозаменитель
+          </label>
+        </p>
+        <p class="selection-form__element">
+          <label class="selection-form__label">
+            <input class="visually-hidden" name="drinking_water" type="checkbox">
+            <span class="selection-form__checkbox"></span>
+            Питьевая вода
+          </label>
+        </p>
+        <p class="selection-form__element">
+          <label class="selection-form__label">
+            <input class="visually-hidden" name="milk" type="checkbox">
+            <span class="selection-form__checkbox"></span>
+            Молоко
+          </label>
+        </p>
+        <p class="selection-form__element">
+          <label class="selection-form__label">
+            <input class="visually-hidden" name="vitamins" type="checkbox">
+            <span class="selection-form__checkbox"></span>
+            Витамины
+          </label>
+        </p>
+      </fieldset>
+
+      <button class="selection-form__submit btn" type="submit">Отправить заявку</button>
+      <small class="selection-form__detail">&ast;&mdash;Обязательные поля</small>
+    </form>
   </main>
+
+  <footer class="page-footer">
+    <div class="page-footer__invitation">
+      <p class="page-footer__invite">Приглашаем к сотрудничеству дилеров!</p>
+      <address class="page-footer__address">ул. Большая Конюшенная, д. 19/8 Санкт-Петербург</address>
+    </div>
+
+    <div class="page-footer__map">
+      <iframe class="map"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7994.521661476303!2d30.319076076063162!3d59.938274658379406!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCDQoNC-0YHRgdC40Y8sIDE5MTE4Ng!5e0!3m2!1sru!2s!4v1656492483567!5m2!1sru!2s"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <img class="page-footer__logo" src="img/footer-logo.svg" width="128" height="24"
+      alt="Интернет магазин «Cat Energy»">
+
+    <ul class="page-footer__socials social-list">
+      <li class="social-list__item">
+        <a class="social-list__link" href="#">
+          <span class="visually-hidden">В контакте</span>
+        </a>
+      </li>
+      <li class="social-list__item">
+        <a class="social-list__link" href="#">
+          <span class="visually-hidden">Инстаграм</span>
+        </a>
+      </li>
+      <li class="social-list__item">
+        <a class="social-list__link" href="#">
+          <span class="visually-hidden">Фейсбук</span>
+        </a>
+      </li>
+    </ul>
+
+    <a class="page-footer__html-academy html-academy" href="https://htmlacademy.ru/intensive/adaptive">
+      HTML Academy
+      <img class="html-academy__logo" src="img/html-academy-logo.svg" width="27" height="34" alt="HTML Academy">
+    </a>
+  </footer>
 </body>
 
 </html>
